@@ -1,0 +1,17 @@
+# Taking input from user
+n = int(input())
+dict = {}
+for _ in range(n):
+    p1 = list(map(str,input().split()))
+    if int(p1[1]) not in dict:
+        dict[int(p1[1])] = [p1]
+    elif int(p1[1]) in dict:
+        dict[int(p1[1])].append(p1)
+    s = sorted(dict, reverse = True)
+print()
+for i in s:
+    if len(dict[i])<2:
+        print(" ".join(dict[i][0]))
+    else:
+        for ele in dict[i]:
+            print(" ".join(ele)
